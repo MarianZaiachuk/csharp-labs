@@ -27,8 +27,9 @@
 | Помилковий / повторний хід | Спроба ходу в зайняту клітинку, за межі поля або після завершення партії | `MakeMove(...)` повертає `false`, стан поля не змінюється, аварійне завершення виключене |
 
 ## Запуск і тестування
+З папки `Lab02_TicTacToe`:
 ```powershell
-dotnet build Lab02_TicTacToe/Lab02_TicTacToe.sln
-dotnet test Lab02_TicTacToe/Lab02_TicTacToe.sln
-dotnet run --project Lab02_TicTacToe/TicTacToeApp/TicTacToeApp.csproj
+dotnet build Lab02_TicTacToe.sln
+dotnet test Lab02_TicTacToe.sln
+dotnet run --project TicTacToeApp/TicTacToeApp.csproj
 ```
