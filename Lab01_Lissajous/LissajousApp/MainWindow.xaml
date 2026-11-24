@@ -1,0 +1,218 @@
+<Window x:Class="LissajousApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Лабораторна робота №1 — Фігури Ліссажу"
+        Width="980"
+        Height="660"
+        MinWidth="780"
+        MinHeight="540"
+        Background="#F6F8FA">
+
+    <Window.Resources>
+        <Style x:Key="FieldLabelStyle" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#24292F"/>
+            <Setter Property="Margin" Value="0,6,0,2"/>
+        </Style>
+
+        <Style x:Key="HintTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Foreground" Value="#57606A"/>
+            <Setter Property="Margin" Value="0,0,0,3"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+        <Style x:Key="ErrorTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#C62828"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="0,2,0,4"/>
+            <Style.Triggers>
+                <Trigger Property="Text" Value="">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="PresetButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="0,0,6,6"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="BorderBrush" Value="#D0D7DE"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0"
+                Background="#FFFFFF"
+                BorderBrush="#D0D7DE"
+                BorderThickness="1"
+                CornerRadius="6"
+                Padding="12"
+                Margin="0,0,12,0">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <TextBlock Text="Параметри коливань"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Foreground="#1F2328"
+                               Margin="0,0,0,6"/>
+
+                    <!-- Амплітуда X -->
+                    <TextBlock Text="Амплітуда Ax (од., 0.1–10)" Style="{StaticResource FieldLabelStyle}"/>
+                    <TextBox Text="{Binding AxText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
+                    <Slider Minimum="0.1" Maximum="10" SmallChange="0.1" LargeChange="1"
+                            Value="{Binding AxSlider}" Margin="0,4,0,0"/>
+                    <TextBlock Text="{Binding AxError}" Style="{StaticResource ErrorTextStyle}"/>
+
+                    <!-- Амплітуда Y -->
+                    <TextBlock Text="Амплітуда Ay (од., 0.1–10)" Style="{StaticResource FieldLabelStyle}"/>
+                    <TextBox Text="{Binding AyText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
+                    <Slider Minimum="0.1" Maximum="10" SmallChange="0.1" LargeChange="1"
+                            Value="{Binding AySlider}" Margin="0,4,0,0"/>
+                    <TextBlock Text="{Binding AyError}" Style="{StaticResource ErrorTextStyle}"/>
+
+                    <!-- Частота X -->
+                    <TextBlock Text="Частота fx (Гц, 0.1–20)" Style="{StaticResource FieldLabelStyle}"/>
+                    <TextBox Text="{Binding FxText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
+                    <Slider Minimum="0.1" Maximum="20" SmallChange="0.5" LargeChange="1"
+                            Value="{Binding FxSlider}" Margin="0,4,0,0"/>
+                    <TextBlock Text="{Binding FxError}" Style="{StaticResource ErrorTextStyle}"/>
+
+                    <!-- Частота Y -->
+                    <TextBlock Text="Частота fy (Гц, 0.1–20)" Style="{StaticResource FieldLabelStyle}"/>
+                    <TextBox Text="{Binding FyText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
+                    <Slider Minimum="0.1" Maximum="20" SmallChange="0.5" LargeChange="1"
+                            Value="{Binding FySlider}" Margin="0,4,0,0"/>
+                    <TextBlock Text="{Binding FyError}" Style="{StaticResource ErrorTextStyle}"/>
+
+                    <!-- Фаза X -->
+                    <TextBlock Text="Фаза φx (°, 0–360)" Style="{StaticResource FieldLabelStyle}"/>
+                    <TextBox Text="{Binding PhiXText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
+                    <Slider Minimum="0" Maximum="360" SmallChange="5" LargeChange="15"
+                            Value="{Binding PhiXSlider}" Margin="0,4,0,0"/>
+                    <TextBlock Text="{Binding PhiXError}" Style="{StaticResource ErrorTextStyle}"/>
+
+                    <!-- Фаза Y -->
+                    <TextBlock Text="Фаза φy (°, 0–360)" Style="{StaticResource FieldLabelStyle}"/>
+                    <TextBox Text="{Binding PhiYText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
+                    <Slider Minimum="0" Maximum="360" SmallChange="5" LargeChange="15"
+                            Value="{Binding PhiYSlider}" Margin="0,4,0,0"/>
+                    <TextBlock Text="{Binding PhiYError}" Style="{StaticResource ErrorTextStyle}"/>
+
+                    <!-- Крок часу -->
+                    <TextBlock Text="Крок часу Δt (с)" Style="{StaticResource FieldLabelStyle}"/>
+                    <TextBlock Text="{Binding MaxTimeStepHint}" Style="{StaticResource HintTextStyle}"/>
+                    <TextBox Text="{Binding TimeStepText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
+                    <Slider Minimum="0.0005" Maximum="0.05" SmallChange="0.0005" LargeChange="0.002"
+                            Value="{Binding TimeStepSlider}" Margin="0,4,0,0"/>
+                    <TextBlock Text="{Binding TimeStepError}" Style="{StaticResource ErrorTextStyle}"/>
+
+                    <!-- Типові співвідношення -->
+                    <TextBlock Text="Типові співвідношення частот"
+                               Style="{StaticResource FieldLabelStyle}"
+                               Margin="0,10,0,6"/>
+                    <WrapPanel>
+                        <Button Content="1:1 (0° пряма)"
+                                Style="{StaticResource PresetButtonStyle}"
+                                Command="{Binding ApplyPresetCommand}"
+                                CommandParameter="1:1-line"/>
+                        <Button Content="1:1 (90° коло)"
+                                Style="{StaticResource PresetButtonStyle}"
+                                Command="{Binding ApplyPresetCommand}"
+                                CommandParameter="1:1-circle"/>
+                        <Button Content="1:2"
+                                Style="{StaticResource PresetButtonStyle}"
+                                Command="{Binding ApplyPresetCommand}"
+                                CommandParameter="1:2"/>
+                        <Button Content="2:3"
+                                Style="{StaticResource PresetButtonStyle}"
+                                Command="{Binding ApplyPresetCommand}"
+                                CommandParameter="2:3"/>
+                        <Button Content="3:4"
+                                Style="{StaticResource PresetButtonStyle}"
+                                Command="{Binding ApplyPresetCommand}"
+                                CommandParameter="3:4"/>
+                    </WrapPanel>
+
+                    <!-- Кнопки дій -->
+                    <Grid Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="8"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0"
+                                Content="Побудувати"
+                                Command="{Binding PlotCommand}"
+                                Height="34"
+                                FontWeight="SemiBold"
+                                Background="#1565C0"
+                                Foreground="White"
+                                BorderThickness="0"/>
+                        <Button Grid.Column="2"
+                                Content="Авто-крок"
+                                Command="{Binding AutoStepCommand}"
+                                Height="34"
+                                Padding="12,0"/>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+        <DockPanel Grid.Column="1">
+            <Border DockPanel.Dock="Bottom"
+                    Background="#FFFFFF"
+                    BorderBrush="#D0D7DE"
+                    BorderThickness="1"
+                    CornerRadius="6"
+                    Padding="10,6"
+                    Margin="0,8,0,0">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Right"
+                               Text="Однаковий масштаб по осях X та Y"
+                               Foreground="#57606A"
+                               FontSize="12"
+                               Margin="12,0,0,0"/>
+                    <TextBlock Text="{Binding StatusText}"
+                               Foreground="#24292F"
+                               FontSize="12"
+                               TextTrimming="CharacterEllipsis"/>
+                </DockPanel>
+            </Border>
+
+            <Border Background="#FFFFFF"
+                    BorderBrush="#D0D7DE"
+                    BorderThickness="1"
+                    CornerRadius="6"
+                    Padding="4">
+                <Canvas x:Name="PlotCanvas"
+                        Background="#FFFFFF"
+                        ClipToBounds="True"
+                        SizeChanged="PlotCanvas_SizeChanged">
+                    <Line X1="0"
+                          X2="{Binding CanvasWidth}"
+                          Y1="{Binding AxisCenterY}"
+                          Y2="{Binding AxisCenterY}"
+                          Stroke="#D0D7DE"
+                          StrokeThickness="1"/>
+                    <Line X1="{Binding AxisCenterX}"
+                          X2="{Binding AxisCenterX}"
+                          Y1="0"
+                          Y2="{Binding CanvasHeight}"
+                          Stroke="#D0D7DE"
+                          StrokeThickness="1"/>
+                    <Polyline Points="{Binding CurvePoints}"
+                              Stroke="#1565C0"
+                              StrokeThickness="2"
+                              StrokeLineJoin="Round"/>
+                </Canvas>
+            </Border>
+        </DockPanel>
+    </Grid>
+</Window>
