@@ -1,9 +1,5 @@
 namespace InterpolationApp.Models;
 
-/// <summary>
-/// Координує табулювання, поліморфне обчислення інтерполяції та проєктування координат.
-/// Не залежить від WPF.
-/// </summary>
 public static class InterpolationExperiment
 {
     public const double DefaultH1 = 0.8;

@@ -4,9 +4,6 @@ using TicTacToeApp.Models;
 
 namespace TicTacToeApp.ViewModels;
 
-/// <summary>
-/// Представлення однієї клітинки поля для прив'язування в XAML.
-/// </summary>
 public sealed class CellViewModel : INotifyPropertyChanged
 {
     public const string EmptySymbol = "";

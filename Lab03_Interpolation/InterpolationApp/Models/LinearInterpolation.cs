@@ -1,8 +1,5 @@
 namespace InterpolationApp.Models;
 
-/// <summary>
-/// Кусочно-лінійна інтерполяція між сусідніми опорними точками.
-/// </summary>
 public sealed class LinearInterpolation : Interpolation
 {
     public override string Name => "Лінійна інтерполяція";

@@ -1,8 +1,5 @@
 namespace IntegrationApp.Models;
 
-/// <summary>
-/// Складений метод Сімпсона (вимагає парної кількості інтервалів).
-/// </summary>
 public sealed class SimpsonIntegrator : IIntegrator
 {
     public string Name => "Метод Сімпсона";

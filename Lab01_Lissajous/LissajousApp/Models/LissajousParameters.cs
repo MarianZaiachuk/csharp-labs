@@ -1,8 +1,5 @@
 namespace LissajousApp.Models;
 
-/// <summary>
-/// Параметри побудови фігури Ліссажу та допустимі межі значень.
-/// </summary>
 public sealed record LissajousParameters(
     double Ax,
     double Ay,

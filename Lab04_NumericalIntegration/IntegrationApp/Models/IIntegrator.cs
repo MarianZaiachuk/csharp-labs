@@ -1,8 +1,5 @@
 namespace IntegrationApp.Models;
 
-/// <summary>
-/// Контракт стратегії чисельного обчислення визначеного інтеграла.
-/// </summary>
 public interface IIntegrator
 {
     string Name { get; }

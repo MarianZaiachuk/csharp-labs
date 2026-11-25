@@ -1,9 +1,5 @@
 namespace LissajousApp.Models;
 
-/// <summary>
-/// Математична модель обчислення точок фігури Ліссажу та перетворення координат.
-/// Не залежить від WPF для можливості незалежного тестування.
-/// </summary>
 public sealed class LissajousModel
 {
     private const double StepTolerance = 1e-12;
@@ -19,9 +15,6 @@ public sealed class LissajousModel
     public static double GetRecommendedTimeStep(double fx, double fy) =>
         GetFastestPeriod(fx, fy) / LissajousParameters.RecommendedPointsPerPeriod;
 
-    /// <summary>
-    /// Обчислює тривалість моделювання для повного замкнення фігури Ліссажу.
-    /// </summary>
     public static double CalculateClosedDuration(double fx, double fy)
     {
         long nx = Math.Max(1, (long)Math.Round(fx * 100.0));
@@ -34,9 +27,6 @@ public sealed class LissajousModel
         return Math.Min(duration, LissajousParameters.MaxSimulationDuration);
     }
 
-    /// <summary>
-    /// Перевіряє коректність параметрів моделі та достатність кроку дискретизації.
-    /// </summary>
     public static void Validate(LissajousParameters parameters)
     {
         ArgumentNullException.ThrowIfNull(parameters);
@@ -105,9 +95,6 @@ public sealed class LissajousModel
         }
     }
 
-    /// <summary>
-    /// Генерує масив точок (x(t), y(t)) у координатах математичної моделі.
-    /// </summary>
     public IReadOnlyList<PointD> GeneratePoints(LissajousParameters parameters)
     {
         Validate(parameters);
@@ -129,10 +116,6 @@ public sealed class LissajousModel
         return points;
     }
 
-    /// <summary>
-    /// Перетворює координати моделі в екранні координати з однаковим масштабом по осях X та Y
-    /// та інверсією осі Y.
-    /// </summary>
     public static IReadOnlyList<PointD> MapToScreen(
         IReadOnlyList<PointD> modelPoints,
         double maxAmplitudeX,

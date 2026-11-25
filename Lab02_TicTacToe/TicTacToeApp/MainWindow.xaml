@@ -76,7 +76,6 @@
     </Window.Resources>
 
     <DockPanel Margin="16">
-        <!-- Панель керування -->
         <Grid DockPanel.Dock="Top" Margin="0,0,0,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -109,7 +108,6 @@
                     BorderThickness="0"/>
         </Grid>
 
-        <!-- Статус партії -->
         <Border DockPanel.Dock="Top"
                 Style="{StaticResource StatusBannerStyle}"
                 Margin="0,0,0,12">
@@ -121,7 +119,6 @@
                        TextAlignment="Center"/>
         </Border>
 
-        <!-- Рахунок -->
         <Border DockPanel.Dock="Bottom"
                 Background="#FFFFFF"
                 BorderBrush="#D0D7DE"
@@ -145,7 +142,6 @@
             </UniformGrid>
         </Border>
 
-        <!-- Ігрове поле N×N -->
         <Border Background="#FFFFFF"
                 BorderBrush="#D0D7DE"
                 BorderThickness="1"

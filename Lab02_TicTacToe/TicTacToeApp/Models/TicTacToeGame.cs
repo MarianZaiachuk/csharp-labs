@@ -1,9 +1,5 @@
 namespace TicTacToeApp.Models;
 
-/// <summary>
-/// Предметна модель гри «Хрестики-нулики» на полі N×N.
-/// Не залежить від WPF і може тестуватися окремо.
-/// </summary>
 public sealed class TicTacToeGame
 {
     public const int DefaultBoardSize = 3;

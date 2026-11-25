@@ -1,8 +1,5 @@
 namespace IntegrationApp.Models;
 
-/// <summary>
-/// Підінтегральна функція з відомою первісною для обчислення еталонного значення.
-/// </summary>
 public sealed record KnownFunction(
     string DisplayName,
     double DefaultA,

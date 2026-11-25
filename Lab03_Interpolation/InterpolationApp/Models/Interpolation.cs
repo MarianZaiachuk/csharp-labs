@@ -1,17 +1,11 @@
 namespace InterpolationApp.Models;
 
-/// <summary>
-/// Базовий абстрактний клас для алгоритмів одновимірної інтерполяції.
-/// </summary>
 public abstract class Interpolation
 {
     protected const double EndpointTolerance = 1e-12;
 
     public abstract string Name { get; }
 
-    /// <summary>
-    /// Обчислює інтерпольоване значення у точці x на основі опорних точок.
-    /// </summary>
     public abstract double Calculate(IReadOnlyList<PointD> points, double x);
 
     protected static void ValidateSupportPoints(IReadOnlyList<PointD> points)

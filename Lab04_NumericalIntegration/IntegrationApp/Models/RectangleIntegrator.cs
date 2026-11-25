@@ -1,8 +1,5 @@
 namespace IntegrationApp.Models;
 
-/// <summary>
-/// Метод середніх прямокутників.
-/// </summary>
 public sealed class RectangleIntegrator : IIntegrator
 {
     public string Name => "Середні прямокутники";

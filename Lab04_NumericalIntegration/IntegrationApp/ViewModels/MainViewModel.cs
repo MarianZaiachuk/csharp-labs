@@ -10,10 +10,6 @@ using IntegrationApp.Models;
 
 namespace IntegrationApp.ViewModels;
 
-/// <summary>
-/// ViewModel головного вікна. Працює виключно через контракт IIntegrator
-/// без розгалужень обчислення для конкретних реалізацій.
-/// </summary>
 public sealed class MainViewModel : INotifyPropertyChanged
 {
     private readonly IIntegrator[] _strategies;

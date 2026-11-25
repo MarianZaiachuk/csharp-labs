@@ -41,7 +41,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Ліва панель керування -->
         <Border Grid.Column="0"
                 Background="#FFFFFF"
                 BorderBrush="#D0D7DE"
@@ -120,7 +119,6 @@
             </ScrollViewer>
         </Border>
 
-        <!-- Права область графіків -->
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -128,7 +126,6 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <!-- Основний графік інтерполяції -->
             <Border Grid.Row="0"
                     Background="#FFFFFF"
                     BorderBrush="#D0D7DE"
@@ -196,7 +193,6 @@
                 </DockPanel>
             </Border>
 
-            <!-- Графік абсолютної похибки -->
             <Border Grid.Row="1"
                     Background="#FFFFFF"
                     BorderBrush="#D0D7DE"
@@ -236,7 +232,6 @@
                 </DockPanel>
             </Border>
 
-            <!-- Рядок стану -->
             <Border Grid.Row="2"
                     Background="#FFFFFF"
                     BorderBrush="#D0D7DE"

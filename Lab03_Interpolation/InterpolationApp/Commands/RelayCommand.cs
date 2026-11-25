@@ -2,9 +2,6 @@ using System.Windows.Input;
 
 namespace InterpolationApp.Commands;
 
-/// <summary>
-/// Базова реалізація ICommand для зв'язування дій у ViewModel.
-/// </summary>
 public sealed class RelayCommand : ICommand
 {
     private readonly Action<object?> _execute;

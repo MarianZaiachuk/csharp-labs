@@ -2,10 +2,6 @@ using System.Globalization;
 
 namespace IntegrationApp.Models;
 
-/// <summary>
-/// Сервіс порівняння стратегій чисельного інтегрування та аналізу збіжності.
-/// Працює виключно через контракт IIntegrator і не залежить від WPF.
-/// </summary>
 public static class IntegrationService
 {
     public const int DefaultIntervals = 20;

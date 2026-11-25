@@ -1,8 +1,5 @@
 namespace InterpolationApp.Models;
 
-/// <summary>
-/// Кусочно-кубічна інтерполяція Ерміта з оцінкою похідних скінченними різницями.
-/// </summary>
 public sealed class HermiteInterpolation : Interpolation
 {
     public override string Name => "Кубічна інтерполяція Ерміта";

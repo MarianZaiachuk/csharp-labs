@@ -1,8 +1,5 @@
 namespace IntegrationApp.Models;
 
-/// <summary>
-/// Складений метод трапецій.
-/// </summary>
 public sealed class TrapezoidIntegrator : IIntegrator
 {
     public string Name => "Метод трапецій";

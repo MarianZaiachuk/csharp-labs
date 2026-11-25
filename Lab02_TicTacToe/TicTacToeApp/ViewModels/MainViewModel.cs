@@ -7,10 +7,6 @@ using TicTacToeApp.Models;
 
 namespace TicTacToeApp.ViewModels;
 
-/// <summary>
-/// ViewModel головного вікна гри «Хрестики-нулики».
-/// Координує команди та адаптує стан TicTacToeGame для WPF Binding.
-/// </summary>
 public sealed class MainViewModel : INotifyPropertyChanged
 {
     private const string HumanTurnMessage = "Ваш хід (X). Оберіть вільну клітинку.";

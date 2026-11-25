@@ -9,10 +9,6 @@ using LissajousApp.Models;
 
 namespace LissajousApp.ViewModels;
 
-/// <summary>
-/// ViewModel головного вікна: керує параметрами фігури Ліссажу,
-/// валідацією введених даних та перетворенням точок у координати полотна.
-/// </summary>
 public sealed class MainViewModel : INotifyPropertyChanged
 {
     private const double MinSliderTimeStep = 0.0005;

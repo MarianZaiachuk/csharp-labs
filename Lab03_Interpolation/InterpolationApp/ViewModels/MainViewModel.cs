@@ -10,10 +10,6 @@ using InterpolationApp.Models;
 
 namespace InterpolationApp.ViewModels;
 
-/// <summary>
-/// ViewModel головного вікна: координує параметри табулювання, валідацію h1/h2,
-/// поліморфне обчислення інтерполяції та побудову графіків функції й похибки.
-/// </summary>
 public sealed class MainViewModel : INotifyPropertyChanged
 {
     private const double MarkerRadius = 4.0;

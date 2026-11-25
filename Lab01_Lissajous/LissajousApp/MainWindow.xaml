@@ -63,49 +63,42 @@
                                Foreground="#1F2328"
                                Margin="0,0,0,6"/>
 
-                    <!-- Амплітуда X -->
                     <TextBlock Text="Амплітуда Ax (од., 0.1–10)" Style="{StaticResource FieldLabelStyle}"/>
                     <TextBox Text="{Binding AxText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
                     <Slider Minimum="0.1" Maximum="10" SmallChange="0.1" LargeChange="1"
                             Value="{Binding AxSlider}" Margin="0,4,0,0"/>
                     <TextBlock Text="{Binding AxError}" Style="{StaticResource ErrorTextStyle}"/>
 
-                    <!-- Амплітуда Y -->
                     <TextBlock Text="Амплітуда Ay (од., 0.1–10)" Style="{StaticResource FieldLabelStyle}"/>
                     <TextBox Text="{Binding AyText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
                     <Slider Minimum="0.1" Maximum="10" SmallChange="0.1" LargeChange="1"
                             Value="{Binding AySlider}" Margin="0,4,0,0"/>
                     <TextBlock Text="{Binding AyError}" Style="{StaticResource ErrorTextStyle}"/>
 
-                    <!-- Частота X -->
                     <TextBlock Text="Частота fx (Гц, 0.1–20)" Style="{StaticResource FieldLabelStyle}"/>
                     <TextBox Text="{Binding FxText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
                     <Slider Minimum="0.1" Maximum="20" SmallChange="0.5" LargeChange="1"
                             Value="{Binding FxSlider}" Margin="0,4,0,0"/>
                     <TextBlock Text="{Binding FxError}" Style="{StaticResource ErrorTextStyle}"/>
 
-                    <!-- Частота Y -->
                     <TextBlock Text="Частота fy (Гц, 0.1–20)" Style="{StaticResource FieldLabelStyle}"/>
                     <TextBox Text="{Binding FyText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
                     <Slider Minimum="0.1" Maximum="20" SmallChange="0.5" LargeChange="1"
                             Value="{Binding FySlider}" Margin="0,4,0,0"/>
                     <TextBlock Text="{Binding FyError}" Style="{StaticResource ErrorTextStyle}"/>
 
-                    <!-- Фаза X -->
                     <TextBlock Text="Фаза φx (°, 0–360)" Style="{StaticResource FieldLabelStyle}"/>
                     <TextBox Text="{Binding PhiXText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
                     <Slider Minimum="0" Maximum="360" SmallChange="5" LargeChange="15"
                             Value="{Binding PhiXSlider}" Margin="0,4,0,0"/>
                     <TextBlock Text="{Binding PhiXError}" Style="{StaticResource ErrorTextStyle}"/>
 
-                    <!-- Фаза Y -->
                     <TextBlock Text="Фаза φy (°, 0–360)" Style="{StaticResource FieldLabelStyle}"/>
                     <TextBox Text="{Binding PhiYText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
                     <Slider Minimum="0" Maximum="360" SmallChange="5" LargeChange="15"
                             Value="{Binding PhiYSlider}" Margin="0,4,0,0"/>
                     <TextBlock Text="{Binding PhiYError}" Style="{StaticResource ErrorTextStyle}"/>
 
-                    <!-- Крок часу -->
                     <TextBlock Text="Крок часу Δt (с)" Style="{StaticResource FieldLabelStyle}"/>
                     <TextBlock Text="{Binding MaxTimeStepHint}" Style="{StaticResource HintTextStyle}"/>
                     <TextBox Text="{Binding TimeStepText, UpdateSourceTrigger=PropertyChanged}" Padding="4,3"/>
@@ -113,7 +106,6 @@
                             Value="{Binding TimeStepSlider}" Margin="0,4,0,0"/>
                     <TextBlock Text="{Binding TimeStepError}" Style="{StaticResource ErrorTextStyle}"/>
 
-                    <!-- Типові співвідношення -->
                     <TextBlock Text="Типові співвідношення частот"
                                Style="{StaticResource FieldLabelStyle}"
                                Margin="0,10,0,6"/>
@@ -140,7 +132,6 @@
                                 CommandParameter="3:4"/>
                     </WrapPanel>
 
-                    <!-- Кнопки дій -->
                     <Grid Margin="0,10,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>

@@ -1,8 +1,5 @@
 namespace TicTacToeApp.Models;
 
-/// <summary>
-/// Поточний результат або стан партії.
-/// </summary>
 public enum GameStatus
 {
     InProgress = 0,
